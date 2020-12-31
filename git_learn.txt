@@ -1,0 +1,41 @@
+一、
+1、初始化一个Git仓库，使用git init命令。
+注意：该命令可以不在git目录汇总执行；
+
+2、添加文件到Git仓库，分两步：
+注意：文件名中有空格是，需要用双引号；
+使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+使用命令git commit -m <message>，完成。
+
+
+二、
+1、要随时掌握工作区的状态，使用git status命令。
+如果git status告诉你有文件被修改过，用git diff可以查看修改内容。
+
+2、提交修改
+git add <file>
+git commit -m "message"
+
+三、
+穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+commit_id是提交的版本号，是头7位；
+
+注意：先通过 git status  查看当前的状态
+a、git add file_a file_b    git commit -m "" 工作区的文件修改后，通过git add进行添加，同时添加多个文件，则使用同一个版本号；
+b、git reflog 可以罗列所有的修改；
+c、git reset --hard  c_id  会回滚到指定的版本，所有同一次修改的文件；
+
+四、
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
+
+五、删除文件
+1、文件丢失或者重新取得；
+a、先用  git status 查看；
+b、git checkout -- fine_name  注意：--后面有空格，否则报错；
+
+2、删除文件
+a、git rm file_name 然后需要 git commit -m "remove file"
