@@ -41,3 +41,38 @@ b、git checkout -- fine_name  注意：--后面有空格，否则报错；
 a、git rm file_name 然后需要 git commit -m "remove file"
 
 六、远程库github（问问公司的git服务器）  
+a、克隆远程文件；
+
+
+b、上传文件；工作区—>缓冲区->本地库->远程库（github）
+git add f_n
+git commit -m ""
+git push origin  分支名
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
